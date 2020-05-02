@@ -1,0 +1,13 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$body-background-color: rgb(196, 179, 203);
+$dark-blue: rgb(32, 32, 87);
+$white: rgb(255, 255, 255);
+$dark-orange: rgb(224, 58, 28);
+
+header {
+    padding: 60px;
+    text-align: center;
+    background-color: $dark-blue;
+    color: $white;
+    font-size: 30px;
+}

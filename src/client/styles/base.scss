@@ -1,0 +1,16 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$body-background-color: rgb(196, 179, 203);
+$dark-blue: rgb(32, 32, 87);
+$white: rgb(255, 255, 255);
+$dark-orange: rgb(224, 58, 28);
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100vh;
+    font-family: $font-stack;
+    background-color: $body-background-color;
+    padding: 20px 20px;
+    font-size: 1.1em;
+}

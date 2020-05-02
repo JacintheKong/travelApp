@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Evaluate a News Article through NLP</title>
+</head>
+
+<body>
+    <header>
+        <div class="">
+            Udacity Nano Degree Project #4:
+        </div>
+        <div class="">
+            Evaluate a News Article through NLP
+        </div>
+    </header>
+
+    <main>
+        <h1>Text Analysis API: An easy-to-use API used to perform a variety of complex NLP tasks on different types of text.</h1>
+        <h2><em>Please enter a Website URL to see how the Text Analysis API interprets it:</em></h2>
+
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="name" type="url" name="test-url" value="" placeholder="https://www.youtube.com/...">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            </form>
+        <section>
+
+        <section class="errors">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <div id="error"></div>
+        </section>
+
+                <section class="url-results">
+                    <ul>
+                        <li>
+                            <h3>Text Polarity:</h3>
+                            <p id="polarity"></p>
+                            <h4>Confidence: </h4>
+                            <p id="polarity_confidence"></p>
+                        </li>
+
+                        <li>
+                            <h3>Text Subjectivity:</h3>
+                            <p id="subjectivity"></p>
+                            <h4>Confidence: </h4>
+                            <p id="subjectivity_confidence"></p>
+                        </li>
+
+                        <li><h3>Text Excerpt:</h3></li>
+                        <p id="excerpt"></p>
+                    </ul>
+                </section>
+    </main>
+
+    <footer>
+        <p><strong>Evaluate a News Article through NLP</strong></p>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                    console.log('SW registered successfuly: ', registration);
+                });
+            });
+        } else {
+            console.log("Service Working not supported");
+        }
+    </script>
+
+</body>
+
+</html>
