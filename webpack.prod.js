@@ -4,6 +4,7 @@ const HtmlWebPackPlugin=require("html-webpack-plugin");
 const TerserPlugin=require('terser-webpack-plugin');
 const MiniCssExtractPlugin=require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin=require('optimize-css-assets-webpack-plugin');
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const WorkboxPlugin=require('workbox-webpack-plugin');
 
 module.exports = {
@@ -37,10 +38,15 @@ module.exports = {
     ,
     plugins: [ 
         new MiniCssExtractPlugin(),
+        new CleanWebpackPlugin(),
         new HtmlWebPackPlugin( {
             template: "./src/client/views/index.html", 
             filename: "./index.html",
         }
         ),
-        new WorkboxPlugin.GenerateSW()]
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true
+        }), 
+    ]
 }

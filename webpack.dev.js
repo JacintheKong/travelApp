@@ -3,12 +3,15 @@ const webpack=require('webpack');
 const HtmlWebPackPlugin=require("html-webpack-plugin");
 const {CleanWebpackPlugin}=require('clean-webpack-plugin'); 
 const BundleAnalyzerPlugin=require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WorkboxPlugin=require('workbox-webpack-plugin');
 
 module.exports= {
     entry: './src/client/index.js',
     output: {
         libraryTarget: 'var', 
         library: 'Client',
+        path: path.resolve(__dirname, 'dist'), 
+        filename: 'bundle.min.js'
     },
     mode: 'development',
     devtool: 'source-map',
@@ -25,14 +28,7 @@ module.exports= {
         ]
     },
     plugins: [ 
-        new BundleAnalyzerPlugin( {
-            analyzerMode: 'server', 
-            generateStatsFile: true, 
-            statsOptions: {
-                source: false
-            }
-        }
-        ),
+        new BundleAnalyzerPlugin(),
         new HtmlWebPackPlugin( {
             template: "./src/client/views/index.html", 
             filename: "./index.html",
@@ -44,5 +40,9 @@ module.exports= {
             cleanStaleWebpackAssets: true, 
             protectWebpackAssets: false
         }),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true
+        }), 
     ]
 }
