@@ -32,13 +32,26 @@ module.exports = {
         {
             test: /\.scss$/, 
             use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-        }
+        },
+        {
+            test: /\.html$/,
+            loader: "html-loader",
+          },
+          {
+            test: /\.(png|svg|jpg|gif)$/,
+            loader: "file-loader",
+          },
         ]
     }
     ,
     plugins: [ 
-        new MiniCssExtractPlugin(),
-        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({filename: '[name].css'}),
+        new CleanWebpackPlugin( {
+            dry: true, 
+            verbose: true, 
+            cleanStaleWebpackAssets: true, 
+            protectWebpackAssets: false
+        }),
         new HtmlWebPackPlugin( {
             template: "./src/client/views/index.html", 
             filename: "./index.html",

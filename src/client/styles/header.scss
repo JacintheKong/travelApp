@@ -1,13 +1,23 @@
-$font-stack: Arial, Helvetica, sans-serif;
-$body-background-color: rgb(196, 179, 203);
-$dark-blue: rgb(32, 32, 87);
-$white: rgb(255, 255, 255);
-$dark-orange: rgb(224, 58, 28);
-
-header {
-    padding: 60px;
-    text-align: center;
-    background-color: $dark-blue;
-    color: $white;
-    font-size: 30px;
+.header {
+  background-color: $dark-color;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
+
+.icon-container {
+  position: relative;
+  top: 70px;
+  padding: 20px;
+  background-color: $white-color;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url("../media/travel.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+

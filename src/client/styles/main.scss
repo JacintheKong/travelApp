@@ -1,0 +1,248 @@
+@import "./variables.scss";
+@import "./resets.scss";
+@import "./header.scss";
+
+body {
+  background: linear-gradient(to right, $pink-color, $orange-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $poppins;
+}
+
+.container {
+  max-width: 90%;
+  width: 1200px;
+  background-color:$white-color;
+  box-shadow: 0 5px 10px black;
+  border-radius: 5px;
+}
+
+.content {
+    padding: 40px;
+    margin-top: 50px;
+    @media screen and (max-width: $break-small) {
+      padding: 30px;
+      margin-top: 30px;
+    }
+    @media screen and (min-width: $break-small) and (max-width: $break-large) {
+      padding: 30px;
+      margin-top: 30px;
+    }
+}
+.general-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.status {
+  font-size: 2.7rem;
+  font-weight: bold;
+  @media screen and (max-width: $break-small) {
+    font-size: 2rem;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    font-size: 2rem;
+  }
+}
+
+.location {
+  font-size: 1.7rem;
+  font-weight: normal;
+  margin-top: 10px;
+  @media screen and (max-width: $break-small) {
+    font-size: 1.1rem;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    font-size: 1.3rem;
+  }
+}
+
+.detail-section {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+
+form {
+  background: $orange-color;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2em;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  @media screen and (max-width: $break-large) {
+      flex-direction: column;
+    }
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $dark-grey;
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    display: none;
+  }
+}
+
+input {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $dark-grey;
+  @media screen and (max-width: $break-small) {
+    font-size: 1rem;
+    width: 5em;
+    height: 8vh;
+    width: 65vw;
+    margin-top: 4vh;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    font-size: 1rem;
+    width: 5em;
+    height: 8vh;
+    width: 65vw;
+    margin-top: 4vh;
+  }
+}
+
+input[type=submit] {
+  width: 5em;  
+  height: 1.7em;
+  background-color: $pink-color;
+  border: 1.5px solid $dark-color;
+  &:hover {
+    color: $white-color;
+    background-color: $dark-blue;
+    transform: scale(1.2);
+  }
+  @media screen and (max-width: $break-small) {
+    font-size: 1rem;
+    width: 30vh;
+    margin-top: 1.8vh;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    font-size: 1rem;
+    width: 30vh;
+    margin-top: 1.8vh;
+  }
+}
+
+.new-trip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
+
+.description {
+  font-size: 1.2rem;
+  font-weight: bold;
+  @media screen and (max-width: $break-small) {
+    font-size: 1.1rem;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    font-size: 1.3rem;
+  }
+}
+
+.trip-info__container {
+  background: $pink-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 1.2em;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  @media screen and (max-width: $break-large) {
+    flex-direction: column;
+    width: 56vh;
+  }
+}
+
+.trip-image__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+
+.trip-image {
+  width: 30vw;
+  height: 36vh;
+  border-radius: 20px;
+  max-width: 90%;
+  &:hover {
+    transform: scale(1.1);
+  }
+  @media screen and (max-width: $break-large) {
+    width: 50vw;
+    height: 24vh;
+    margin-top: 3vh;
+  }
+}
+
+.trip-description__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  flex-grow: 1;
+  color: $dark-grey;
+  margin-top: 3vh;
+  padding: 20px;
+  line-height: 2;
+  @media screen and (max-width: $break-small) {
+font-size: 1.1rem;
+padding: 0;
+align-items: center;
+  }
+}
+
+.trips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.btn {
+  width: 30vh;  
+  height: 4vh;
+  background-color: $pink-color;
+  border: 1.5px solid $dark-color;
+  font-size: 1.2rem;
+  &:hover {
+    color: $white-color;
+    background-color: $dark-blue;
+    transform: scale(1.2);
+  }
+}
+
+.weather-icon {
+  height: 5vh;
+  width: 3.5vw;
+  margin-bottom: 0;
+  @media screen and (max-width: $break-small) {
+    height: 5vh;
+    width: 8vw;
+  }
+  @media screen and (min-width: $break-small) and (max-width: $break-large) {
+    height: 6vh;
+    width: 5vw;
+  }
+}

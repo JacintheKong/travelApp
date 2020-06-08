@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for server/handleRequest.js</title>
+    <title>Code coverage report for server/routes.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -18,34 +18,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">server</a> handleRequest.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">server</a> routes.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">94.74% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>18/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">94.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>17/18</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,64 +81,73 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">require('dotenv').config()
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const router = require("express").Router();
+const path = require("path");
+const {v4: uuidv4} = require("uuid");
 &nbsp;
-function validateInputRequest(req, res, next) {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if(!req.body.text ) {
-        return res.status(400).json({
-           message: 'Invalid input'
-        })
-    } 
-<span class="cstat-no" title="statement not covered" >    return next();</span>
-}
+let savedTrips = [];
 &nbsp;
-function <span class="fstat-no" title="function not covered" >PostHandler(</span>req, res, next) { 
-    var aylien = <span class="cstat-no" title="statement not covered" >require("aylien_textapi");</span>
-    var textapi = <span class="cstat-no" title="statement not covered" >new aylien({</span>
-        application_id: process.env.APP_ID,
-        application_key: process.env.APP_KEY
-    });
-<span class="cstat-no" title="statement not covered" >    textapi.sentiment({</span>
-      'url': req.body.text
-    }, <span class="fstat-no" title="function not covered" >fu</span>nction(error, response) {
-<span class="cstat-no" title="statement not covered" >        res.send(response)</span>
-    }); 
-}
+router.get("/", <span class="fstat-no" title="function not covered" >fu</span>nction (req, res, next) {
+<span class="cstat-no" title="statement not covered" >  res.sendFile(path.resolve("dist/index.html"));</span>
+});
 &nbsp;
-exports.validateInputRequest = validateInputRequest;
-exports.PostHandler = PostHandler;</pre></td></tr></table></pre>
+router.get("/trips", function (req, res, next) {
+  res.status(200).json(savedTrips);
+});
+&nbsp;
+router.post("/trips", function (req, res, next) {
+  const { trip } = req.body;
+  trip.id = uuidv4();
+  savedTrips.push(trip);
+  res.status(200).json(savedTrips);
+});
+&nbsp;
+router.delete("/trips/:id", function (req, res, next) {
+  const { id } = req.params;
+  savedTrips = savedTrips.filter((trip) =&gt; trip.id !== id);
+  res.status(200).json(savedTrips);
+});
+&nbsp;
+module.exports = router;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat May 02 2020 13:26:55 GMT-0400 (Eastern Daylight Time)
+                at Fri May 15 2020 21:58:16 GMT-0400 (Eastern Daylight Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
